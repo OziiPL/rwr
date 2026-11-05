@@ -11,18 +11,20 @@ size = Vector3(0.1, 0.1, 0.1)
 [node name="Node3D" type="Node3D" unique_id=1926357043]
 script = ExtResource("1_ig7tw")
 
-[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=1976308829]
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=606475299]
 
-[node name="LeftController" type="XRController3D" parent="." unique_id=923989180]
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1976308829]
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=923989180]
 tracker = &"left_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftController" unique_id=938348100]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=938348100]
 mesh = SubResource("BoxMesh_wwy8v")
 
-[node name="RightController" type="XRController3D" parent="." unique_id=1353563418]
+[node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=1353563418]
 tracker = &"right_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RightController" unique_id=167885165]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=167885165]
 mesh = SubResource("BoxMesh_q4ygw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2117988640]
@@ -31,3 +33,4 @@ mesh = SubResource("BoxMesh_q4ygw")
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Enter VR"
+metadata/_edit_use_anchors_ = true
